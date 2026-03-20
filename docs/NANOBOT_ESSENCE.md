@@ -22,6 +22,10 @@ nanobot 本质上是一个 **消息驱动的对话 Agent 框架**，核心流程
 
 ---
 
+**完整模块关系图**：见 [ARCHITECTURE.md](./ARCHITECTURE.md)
+
+---
+
 ## 核心模块解析
 
 ### 1. Agent Loop（大脑）— `agent/loop.py`
@@ -315,6 +319,8 @@ LLM 返回 tool_calls → 框架执行 → 结果加到消息历史 → 继续�
 
 ### 4. Tool System（工具系统）
 
+详细内容见 [TOOLS.md](./TOOLS.md)
+
 **架构**：
 
 ```
@@ -347,6 +353,8 @@ class Tool(ABC):
 ---
 
 ### 5. Channel System（渠道接入）
+
+详细内容见 [CHANNEL.md](./CHANNEL.md)
 
 **设计模式**：每个平台是一个 Channel，遵循 `BaseChannel` 接口
 
@@ -385,6 +393,8 @@ Agent 回复 → OutboundMessage → Bus.publish_outbound() → Channel.send()
 ---
 
 ### 7. Session Manager（会话管理）— `session/manager.py`
+
+详细内容见 [SESSION.md](./SESSION.md)
 
 **会话存储**：JSONL 格式
 ```
